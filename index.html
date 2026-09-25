@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEET PG Marks vs Rank — 2026 vs 2025</title>
+  <meta name="description" content="Compare NEET PG 2026 and 2025 marks by rank. Search any rank to see the marks scored in each year.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%232563eb'/%3E%3Cpath d='M3 11.5 6 7l2.5 3L11 5l2 6.5z' fill='%23fff'/%3E%3C/svg%3E">
+</head>
+<body>
+  <header class="app-header">
+    <div class="header-right">
+      <div class="built-with">
+        Built with AI · <a href="https://opencode.ai/" target="_blank" rel="noopener noreferrer"><strong>OpenCode</strong></a>
+      </div>
+    </div>
+    <h1>NEET PG Marks vs Rank</h1>
+    <p class="subtitle">
+      Marks scored at every rank, side by side for NEET PG 2026 and 2025.
+      Look up your rank to see what it took in each year.
+    </p>
+    <p class="subtitle source-note">
+      Rows are keyed on the <strong>2026 rank</strong> (2026 has the larger rank range).
+      Marks come from each year's own score sheet, so a 2025 mark appears only where that
+      rank also existed in 2025.
+    </p>
+    <p class="subtitle source-note score-source-note">
+      Marks data compiled from the NAT board result score sheets for
+      <a href="https://natboard.edu.in/natboard-data/pdf/NEETPG2025RESULT/NEET-PG%202025%20Notice%20Board%20Result%20-%2019.08.2025%20-%20DS.pdf"
+         target="_blank" rel="noopener noreferrer">NEET PG 2025</a>
+      and
+      <a href="https://natboard.edu.in/pdoof/NEET-PG%202026%20Published%20Result_DS.pdf"
+         target="_blank" rel="noopener noreferrer">NEET PG 2026</a>.
+    </p>
+
+  </header>
+
+  <main>
+    <section class="filter-bar">
+      <div class="filter-control filter-rank" id="filter-rank"></div>
+      <div class="filter-control filter-score" id="filter-min-rank"></div>
+      <div class="filter-control filter-score" id="filter-max-rank"></div>
+      <div class="filter-control filter-score" id="filter-min-m26"></div>
+      <div class="filter-control filter-score" id="filter-max-m26"></div>
+      <div class="filter-control filter-score" id="filter-min-m25"></div>
+      <div class="filter-control filter-score" id="filter-max-m25"></div>
+      <div class="filter-actions">
+        <button id="apply-btn" class="btn btn-primary">Apply Filter</button>
+        <button id="clear-btn" class="btn">Clear All</button>
+      </div>
+    </section>
+
+    <p class="filter-hint">
+      Enter an exact <strong>Rank</strong> to find a single candidate, or use the Min/Max boxes to
+      bracket a range. <strong>Marks Δ</strong> is 2026 marks minus 2025 marks at the same rank:
+      <strong>negative</strong> means that rank needed fewer marks in 2026 (2026 was effectively easier
+      or scored higher), positive means it cost more. <strong>Clear All</strong> resets every filter.
+    </p>
+
+    <section class="results-info">
+      <span id="result-count" class="result-count"></span>
+    </section>
+
+    <section class="table-wrap">
+      <table id="data-table">
+        <thead>
+          <tr>
+            <th data-key="rank">Rank</th>
+            <th data-key="m26">Marks 2026</th>
+            <th data-key="m25">Marks 2025</th>
+            <th data-key="delta">Marks Δ</th>
+          </tr>
+        </thead>
+        <tbody id="table-body">
+          <tr><td colspan="4" class="empty-cell">Loading…</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="pagination">
+      <button id="first-btn" class="btn">First</button>
+      <button id="prev-btn" class="btn">Previous</button>
+      <span id="page-info" class="page-info"></span>
+      <button id="next-btn" class="btn">Next</button>
+      <button id="last-btn" class="btn">Last</button>
+    </section>
+  </main>
+
+  <script src="neetpg-marks.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
